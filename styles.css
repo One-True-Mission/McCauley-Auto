@@ -446,6 +446,13 @@ body[data-page="book"] .hero--page {
   background-size: cover;
   background-position: center;
 }
+body[data-page="events"] .hero--page {
+  background-image:
+    linear-gradient(100deg, rgba(10, 18, 36, 0.92) 0%, rgba(12, 20, 38, 0.66) 55%, rgba(12, 20, 38, 0.34) 100%),
+    url('assets/hero-events.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 /* ==========================================================================
    MARQUEE  (full bleed, deepest warm tone)
@@ -536,6 +543,7 @@ body[data-page="book"] .hero--page {
 .svc-grid--4 { grid-template-columns: repeat(4, 1fr); }
 .svc-all { text-align: center; margin-top: 44px; }
 .svc-card {
+  position: relative;
   background: var(--frame-light);
   border: 2px solid var(--blue);
   border-radius: 10px;
@@ -547,6 +555,19 @@ body[data-page="book"] .hero--page {
   transform: translateY(-4px);
   border-color: var(--blue);
   box-shadow: var(--shadow-lift), 0 0 0 2px var(--red);
+}
+.svc-card--new { border-color: var(--red); }
+.svc-card--new:hover { box-shadow: var(--shadow-lift), 0 0 0 2px var(--blue); }
+.svc-flag {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 999px;
 }
 .svc-icon {
   width: 52px; height: 52px;
@@ -760,6 +781,92 @@ body[data-page="book"] .hero--page {
 }
 .value-card h3 { margin-bottom: 10px; }
 .value-card p { color: var(--ink-soft); }
+
+/* meet the team */
+.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.team-card {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  background: var(--frame-light);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 26px 28px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-lift), 0 0 0 2px var(--red);
+}
+.team-photo {
+  flex: 0 0 120px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--red);
+}
+.team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.team-info h3 { margin-bottom: 4px; }
+.team-role {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.06em;
+  color: var(--red);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.team-info p { color: var(--ink-soft); font-size: 1rem; }
+
+/* community events */
+.events-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+.event-card {
+  display: flex;
+  gap: 26px;
+  align-items: stretch;
+  background: var(--frame-light);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 26px 30px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-lift), 0 0 0 2px var(--red);
+}
+.event-date {
+  flex: 0 0 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 10px;
+  padding: 14px 0;
+}
+.ev-month {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.08em;
+  font-size: 1.2rem;
+  color: var(--red-bright);
+}
+.ev-day {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+.event-body h3 { margin-bottom: 6px; }
+.event-meta {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+.event-meta .star { color: var(--red); }
+.event-body p { color: var(--ink-soft); }
 
 /* ==========================================================================
    CTA STRIP (emphasis frame)
@@ -989,6 +1096,8 @@ body[data-page="book"] .hero--page {
   .stat:nth-child(odd) { border-right: 1px solid rgba(75,61,49,0.18); }
   .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
   .values-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .events-grid { grid-template-columns: 1fr; }
   .book-grid { grid-template-columns: 1fr; gap: 26px; }
   .form-shell { padding: 44px 30px; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -1020,6 +1129,11 @@ body[data-page="book"] .hero--page {
   .step .n { font-size: 2.2rem; }
   .step h3 { font-size: 1.18rem; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
+  .team-card { flex-direction: column; text-align: center; }
+  .team-photo { flex-basis: 110px; }
+  .event-card { flex-direction: column; gap: 16px; }
+  .event-date { flex-direction: row; gap: 10px; padding: 10px 0; }
+  .ev-day { font-size: 1.8rem; }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { justify-content: center; text-align: center; }
 

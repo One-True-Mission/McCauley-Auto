@@ -148,35 +148,38 @@
   start();
 })();
 
-/* ---------- Booking form validation ---------- */
+/* ---------- Form validation (booking + RSVP) ---------- */
 (function () {
-  var form = document.getElementById('bookForm');
-  if (!form) return;
+  var forms = [document.getElementById('bookForm'), document.getElementById('rsvpForm')];
 
   function showError(field) { field.classList.add('invalid'); }
   function clearError(field) { field.classList.remove('invalid'); }
 
-  form.querySelectorAll('input, select, textarea').forEach(function (el) {
-    el.addEventListener('input', function () {
-      var field = el.closest('.field');
-      if (field) clearError(field);
-    });
-  });
+  forms.forEach(function (form) {
+    if (!form) return;
 
-  form.addEventListener('submit', function (e) {
-    var valid = true;
-    form.querySelectorAll('[required]').forEach(function (el) {
-      var field = el.closest('.field');
-      if (!field) return;
-      if (!el.value.trim()) { showError(field); valid = false; }
-      else if (el.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value)) {
-        showError(field); valid = false;
-      } else { clearError(field); }
+    form.querySelectorAll('input, select, textarea').forEach(function (el) {
+      el.addEventListener('input', function () {
+        var field = el.closest('.field');
+        if (field) clearError(field);
+      });
     });
-    if (!valid) {
-      e.preventDefault();
-      var firstBad = form.querySelector('.field.invalid');
-      if (firstBad) firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+
+    form.addEventListener('submit', function (e) {
+      var valid = true;
+      form.querySelectorAll('[required]').forEach(function (el) {
+        var field = el.closest('.field');
+        if (!field) return;
+        if (!el.value.trim()) { showError(field); valid = false; }
+        else if (el.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value)) {
+          showError(field); valid = false;
+        } else { clearError(field); }
+      });
+      if (!valid) {
+        e.preventDefault();
+        var firstBad = form.querySelector('.field.invalid');
+        if (firstBad) firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
   });
 })();

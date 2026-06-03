@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Events | McCauley Automotive Mobile Mechanic</title>
+<meta name="description" content="Join McCauley Automotive for free community events across Central Texas. Vehicle safety and maintenance tips for everyone. RSVP to save your spot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="events">
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="McCauley Automotive logo" class="brand-logo">
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+    </button>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" class="nav-link" data-nav="home">Home</a>
+      <a href="services.html" class="nav-link" data-nav="services">Services</a>
+      <a href="about.html" class="nav-link" data-nav="about">About</a>
+      <a href="events.html" class="nav-link" data-nav="events">Events</a>
+      <a href="book.html" class="nav-cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="index.html" class="m-link">Home</a>
+  <a href="services.html" class="m-link">Services</a>
+  <a href="about.html" class="m-link">About</a>
+  <a href="events.html" class="m-link">Events</a>
+  <a href="book.html" class="m-cta">Get in touch</a>
+  <a href="tel:+12542230795" class="m-call">Call (254) 223-0795</a>
+</aside>
+
+<!-- PAGE HERO -->
+<section class="hero hero--page">
+  <div class="hero-content">
+    <div class="hero-inner">
+      <span class="eyebrow">Community Events</span>
+      <h1>Free Events In Your Community</h1>
+      <p>We host free events across Central Texas covering vehicle safety and simple maintenance tips. Come learn, ask questions, and get to know your local mobile mechanic. RSVP below so we know to expect you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section class="section">
+  <div class="container frame frame--tab">
+    <div class="section-head">
+      <span class="eyebrow eyebrow--center">What's Coming Up</span>
+      <h2>Upcoming Events</h2>
+      <p class="lede">Dates and locations are being finalized. Check back soon or RSVP below and we will keep you posted.</p>
+    </div>
+    <div class="events-grid">
+      <article class="event-card">
+        <div class="event-date"><span class="ev-month">TBD</span><span class="ev-day">00</span></div>
+        <div class="event-body">
+          <h3>Vehicle Safety Basics</h3>
+          <p class="event-meta"><span class="star">&#9733;</span> Date and time coming soon &nbsp;|&nbsp; Central Texas</p>
+          <p>A hands-on walk through the safety checks every driver should know: tires, brakes, lights, and the warning signs that mean it is time to call a mechanic.</p>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="event-date"><span class="ev-month">TBD</span><span class="ev-day">00</span></div>
+        <div class="event-body">
+          <h3>Maintenance Made Simple</h3>
+          <p class="event-meta"><span class="star">&#9733;</span> Date and time coming soon &nbsp;|&nbsp; Central Texas</p>
+          <p>Learn the simple maintenance that keeps your vehicle healthy and saves you money, from fluids and filters to seasonal checks for the Texas heat.</p>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="event-date"><span class="ev-month">TBD</span><span class="ev-day">00</span></div>
+        <div class="event-body">
+          <h3>Know Your Dashboard</h3>
+          <p class="event-meta"><span class="star">&#9733;</span> Date and time coming soon &nbsp;|&nbsp; Central Texas</p>
+          <p>What all those warning lights actually mean, which ones can wait, and which ones mean pull over now. Bring your questions.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="section">
+  <div class="container">
+    <div class="book-grid">
+      <!-- RSVP FORM -->
+      <div class="form-shell frame--tab">
+        <span class="eyebrow">Save Your Spot</span>
+        <h2 style="margin-bottom:8px;">RSVP For An Event</h2>
+        <p style="color:var(--ink-soft);margin-bottom:28px;">Let us know you're coming so we can plan a headcount. It's free, and all are welcome.</p>
+        <form id="rsvpForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
+          <input type="hidden" name="_subject" value="New event RSVP from McCauley Automotive website">
+          <input type="hidden" name="_next" value="thank-you.html">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+              <span class="err">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+              <span class="err">Please enter a valid email.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="field">
+              <label for="guests">How Many Attending?</label>
+              <select id="guests" name="guests" required>
+                <option value="">Select a number</option>
+                <option>Just me</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 or more</option>
+              </select>
+              <span class="err">Please let us know how many.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="event">Which Event?</label>
+            <select id="event" name="event" required>
+              <option value="">Select an event</option>
+              <option>Vehicle Safety Basics</option>
+              <option>Maintenance Made Simple</option>
+              <option>Know Your Dashboard</option>
+              <option>Any / Not Sure Yet</option>
+            </select>
+            <span class="err">Please choose an event.</span>
+          </div>
+          <div class="field">
+            <label for="message">Anything You Want Us To Know?</label>
+            <textarea id="message" name="message" placeholder="Questions, topics you'd like covered, or anything else."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary form-submit">Send RSVP</button>
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="contact-shell">
+        <h3>About Our Events</h3>
+        <p class="sub">Free, friendly, and open to everyone in the community.</p>
+        <div class="contact-row">
+          <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+          <div><div class="lbl">When</div><p>Dates and times announced soon</p></div>
+        </div>
+        <div class="contact-row">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="lbl">Where</div><p>Locations across Central Texas</p></div>
+        </div>
+        <div class="contact-row">
+          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+          <div><div class="lbl">Cost</div><p>Always free to attend</p></div>
+        </div>
+        <div class="contact-row">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><div class="lbl">Questions?</div><a href="tel:+12542230795">(254) 223-0795</a></div>
+        </div>
+        <div class="contact-owned"><span class="star">&#9733;</span> Woman &amp; Veteran Owned</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="f-col f-brand">
+      <img src="assets/logo.png" alt="" class="f-logo">
+      <p class="f-tag">Dependable mobile automotive service for Central Texas. Honest diagnostics, quality work, right where you need us.</p>
+      <p class="f-owned">Woman &amp; Veteran Owned</p>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="tel:+12542230795">(254) 223-0795</a>
+      <a href="mailto:mccauleyautomotive@gmail.com">mccauleyautomotive@gmail.com</a>
+      <p>Monday to Friday<br>8AM to 5PM</p>
+    </div>
+    <div class="f-col">
+      <h4>Services</h4>
+      <a href="services.html">Diagnostics</a>
+      <a href="services.html">Oil &amp; Maintenance</a>
+      <a href="services.html">Brakes</a>
+      <a href="services.html">Roadside Assistance</a>
+    </div>
+    <div class="f-col">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="book.html">Book a Visit</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 McCauley Automotive. All rights reserved.</p>
+    <p class="otm-credit">Built by <a href="https://otm-designs.com" target="_blank" rel="noopener">OTM Web Design</a></p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+12542230795"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (254) 223-0795</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
