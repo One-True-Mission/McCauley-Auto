@@ -637,7 +637,7 @@ body[data-page="events"] .hero--page {
 /* ==========================================================================
    STATS BAND (emphasis frame)
    ========================================================================== */
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
 .stat .num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(3rem, 5.5vw, 4.4rem);
@@ -1005,6 +1005,54 @@ body[data-page="events"] .hero--page {
 }
 .otm-credit a { color: #BFB099; }
 .otm-credit a:hover { color: var(--red-bright); }
+.footer-legal { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-legal a { color: #BFB099; }
+.footer-legal a:hover { color: var(--red-bright); }
+
+/* ==========================================================================
+   LEGAL PAGE
+   ========================================================================== */
+.legal { max-width: 80ch; margin: 0 auto; }
+.legal-updated {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+.legal-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  padding: 18px 24px;
+  margin-bottom: 40px;
+  background: var(--frame-deep);
+  border-radius: 10px;
+  border-left: 3px solid var(--red);
+}
+.legal-toc a {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.legal-toc a:hover { color: var(--red); }
+.legal h2 {
+  font-size: 2rem;
+  margin: 46px 0 14px;
+  padding-top: 22px;
+  border-top: 2px solid rgba(28, 42, 74, 0.18);
+  scroll-margin-top: 96px;
+}
+.legal h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.legal h3 {
+  font-size: 1.3rem;
+  margin: 26px 0 8px;
+  color: var(--navy);
+}
+.legal p {
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
 
 /* ==========================================================================
    STICKY MOBILE CALL BAR
@@ -1054,9 +1102,7 @@ body[data-page="events"] .hero--page {
   .intro-media img { min-height: 320px; }
   .svc-grid, .svc-grid--4 { grid-template-columns: repeat(2, 1fr); }
   .special { grid-template-columns: 1fr; gap: 30px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 24px; }
-  .stat + .stat { border-left: none; }
-  .stat:nth-child(odd) { border-right: 1px solid rgba(75,61,49,0.18); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
   .values-grid { grid-template-columns: 1fr; }
   .events-grid { grid-template-columns: 1fr; }
@@ -1085,7 +1131,7 @@ body[data-page="events"] .hero--page {
   .svc-card h3 { font-size: 1.18rem; }
   .svc-card p { font-size: 0.92rem; }
   .stats-grid { grid-template-columns: 1fr; gap: 26px; }
-  .stat:nth-child(odd) { border-right: none; }
+  .stat + .stat { border-left: none; }
   .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .step { padding: 22px 18px; }
   .step .n { font-size: 2.2rem; }
